@@ -1,15 +1,37 @@
 ark_config:
-    max_fwd_linear_speed: 1.0
-    max_rev_linear_speed: 1.0
+    # max_fwd_linear_speed: 1.0
+    # max_rev_linear_speed: 1.0
+    max_fwd_linear_speed: 0.3
+    max_rev_linear_speed: 0.3
+
     min_linear_speed: 0.05
-    max_linear_acceleration: 1.0
-    max_linear_deceleration: -1.0
-    max_ang_speed: 1.0
+
+    # max_linear_acceleration: 1.0
+    # max_linear_deceleration: -1.0
+    max_linear_acceleration: 0.2
+    max_linear_deceleration: -0.2
+
+    # max_ang_speed: 1.0
+    max_ang_speed: 0.5
+
+    # max_ang_accel: 1.0
     max_ang_accel: 1.0
+
+
+    
     vehicle_length: 1.042
     vehicle_width: 0.661
-    stopping_distance_1M: 0.3
+    stopping_distance_1M: 0.01
     lidar_spacing: 0.91
     laser_fov: 175.0
     camera_3d_memory: 0.1
     drive_direction: 1
+
+
+# message to be published on the terminal if you want to change the vel/acc parameters:
+
+
+# rostopic pub -1 /ark_bridge/ark_config_settings_call ark_bridge/ArkConfigSettingsCall "{max_fwd_linear_speed: 0.2, max_rev_linear_speed: 0.2, min_linear_speed: 0.05, max_linear_acceleration: 1.0,
+#   max_linear_deceleration: -1.0, max_ang_speed: 0.2, max_ang_accel: 1.0, vehicle_length: 1.042,
+#   vehicle_width: 0.661, stopping_distance_1M: 0.01, lidar_spacing: 0.91, laser_fov: 175.0,
+#   camera_3d_memory: 0.1, drive_direction: 1}" 
